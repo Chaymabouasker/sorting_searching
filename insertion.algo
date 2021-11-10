@@ -1,0 +1,41 @@
+PROCEDURE insertion_sort(N:INTEGER , tab : ARRAY_OF INTEGER)
+VAR
+    temp,j,i:INTEGER;
+    
+BEGIN
+    FOR i FROM 1 TO N-1 STEP 1  DO
+    temp:=tab[i];
+    j:=i-1;
+    WHILE  (j>=0 AND tab[i] > temp) DO
+        tab[j+1]:=tab[j];
+        j:= j-1 ;
+    END_WHILE
+    tab[j+1]:=temp;
+    END_FOR
+END
+PROCEDURE read_tab(N:INTEGER , tab : ARRAY_OF INTEGER)
+VAR
+i:INTEGER;
+BEGIN
+FOR i FROM 1 TO N-1 STEP 1 DO
+    READ (tab[i]);
+END_FOR
+END
+PROCEDURE write_tab(N:INTEGER ,tab : ARRAY_OF INTEGER)
+VAR
+i:INTEGER;
+BEGIN
+FOR i FROM 1 TO N-1 STEP 1  DO
+    WRITE (tab[i]);
+END_FOR
+END
+ALGORITHM Insertion_Sort
+VAR
+    tab : ARRAY_OF INTEGER;
+    i,N:INTEGER;
+
+BEGIN
+    read_tab(N,tab);
+    insertion_sort(tab);
+    write_tab(N,tab)
+END
