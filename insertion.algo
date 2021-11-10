@@ -36,6 +36,6 @@ VAR
 
 BEGIN
     read_tab(N,tab);
-    insertion_sort(tab);
+    insertion_sort(N,tab);
     write_tab(N,tab)
 END
